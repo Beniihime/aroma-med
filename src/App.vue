@@ -6,6 +6,8 @@ import Preloader from './components/Preloader.vue';
 import Cards from './components/Cards.vue';
 import BiggerLogo from './components/BiggerLogo.vue';
 import ContactUs from './components/ContactUs.vue';
+import Marquee from './components/Marquee.vue';
+import Footer from './components/Footer.vue';
 
 const showPreloader = ref(true);
 const showMainContent = ref(false);
@@ -51,7 +53,7 @@ onMounted(() => {
     
     <BiggerLogo v-if="showMainContent" />
 
-    <section v-if="showMainContent" class="position-relative">
+    <section id="top-section" v-if="showMainContent" class="position-relative">
       <div class="helped mx-5 mb-5" style="width: 7%;">
         <img class="img-fluid" src="@/assets/fsi.png" alt="ФСИ">
       </div>
@@ -60,36 +62,7 @@ onMounted(() => {
 
     <main style="background-color: #fff;">
       <section id="main" class="main-section" v-if="showMainContent">
-        <div class="marquee py-4">
-          <div class="ticker__in">
-            <span class="tag">/ Аромаингалятор</span>
-            <span class="separator"><i class="pi pi-plus-circle"></i></span>
-            <span class="tag">/ ВосстановлениеОбоняния</span>
-            <span class="separator"><i class="pi pi-plus-circle"></i></span>
-            <span class="tag">/ КогнитивнаяРеабилитация</span>
-            <span class="separator"><i class="pi pi-plus-circle"></i></span>
-            <span class="tag">/ ИнновационнаяМедтехника</span>
-            <span class="separator"><i class="pi pi-plus-circle"></i></span>
-            <span class="tag">/ Аносмия</span>
-            <span class="separator"><i class="pi pi-plus-circle"></i></span>
-            <span class="tag">/ Ароматерапия</span>
-            <span class="separator"><i class="pi pi-plus-circle"></i></span>
-            
-            <span class="tag">/ Аромаингалятор</span>
-            <span class="separator"><i class="pi pi-plus-circle"></i></span>
-            <span class="tag">/ ВосстановлениеОбоняния</span>
-            <span class="separator"><i class="pi pi-plus-circle"></i></span>
-            <span class="tag">/ КогнитивнаяРеабилитация</span>
-            <span class="separator"><i class="pi pi-plus-circle"></i></span>
-            <span class="tag">/ ИнновационнаяМедтехника</span>
-            <span class="separator"><i class="pi pi-plus-circle"></i></span>
-            <span class="tag">/ Аносмия</span>
-            <span class="separator"><i class="pi pi-plus-circle"></i></span>
-            <span class="tag">/ Ароматерапия</span>
-            <span class="separator"><i class="pi pi-plus-circle"></i></span>
-          
-          </div>
-        </div>
+        <Marquee />
       </section>
 
       <section id="hero" class="hero-section" v-if="showMainContent">
@@ -162,33 +135,18 @@ onMounted(() => {
       <section id="contact-us" v-if="showMainContent">
         <ContactUs />
       </section> 
+
+      <section id="footer" v-if="showMainContent">
+        <div data-aos="slide-up" data-aos-offset="500">
+          <Footer @scrollToSection="scrollToSection" @scrollToDetails="scrollToDetails" />
+        </div>
+      </section>
     </main>
 
   </div>
 </template>
 
 <style scoped>
-
-.bigger__logo {
-  display: flex;
-  place-items: center;
-  padding: 15rem 26rem;
-  animation: bigger__logo__zoom 0.3s ease-out forwards;
-}
-
-@keyframes bigger__logo__zoom {
-  from {
-    transform: scale(0);
-    opacity: 0;
-  }
-  to {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
-.bigger__logo-svg  {
-  fill: #71d1b4;
-}
 .noselect {
   -webkit-touch-callout: none; /* iOS Safari */
     -webkit-user-select: none; /* Safari */
@@ -248,47 +206,7 @@ onMounted(() => {
         transform: translateX(-50%) translateY(-6px);
     }
 }
-.pi-plus-circle {
-  color: #71d1b4;
-}
-.marquee {
-  font-size: 32px;
-  color: #000;
-  width: 100vw;
-  max-width: 2600px;
-  overflow: hidden;
-  position: relative;
-}
-.ticker__in {
-  display: flex;
-  align-items: center;
-  width: fit-content;
-  animation: scroll 12s linear infinite;
-  -webkit-transform-style: preserve-3d;
-}
 
-.tag {
-  /* padding: 0 .75rem; */
-  white-space: nowrap;
-  -webkit-backface-visibility: hidden;
-}
-
-.separator {
-  padding: 0 4rem;
-  font-size: 24px;
-  display: flex;
-  align-items: center;
-  white-space: nowrap;
-}
-
-@keyframes scroll {
-  0% {
-    transform: translate3d(0, 0, 0);
-  }
-  100% {
-    transform: translate3d(-50%, 0, 0);
-  }
-}
 main {
   border-radius: 32px 32px 0 0;
   
