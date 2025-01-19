@@ -10,12 +10,14 @@
   },
   "dependencies": {
     "aos": "^2.3.4",
+    "axios": "^1.7.9",
     "bootstrap": "^5.3.3",
     "custom-vue-scrollbar": "^0.0.8",
     "primeicons": "^7.0.0",
     "vite-svg-loader": "^5.1.0",
     "vue": "^3.5.13",
-    "vue-router": "^4.5.0"
+    "vue-router": "^4.5.0",
+    "vue3-recaptcha2": "^1.8.0"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.2.1",
