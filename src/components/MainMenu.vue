@@ -15,35 +15,19 @@
 
             <!-- Дополнительные кнопки -->
             <div class="menu-actions">
-                <div class="contact-button" :class="{ 'animated': isAnimated }">
+                <div class="contact-button" :class="{ 'animated': isAnimated }" @click="$emit('scrollToDetails', 'contact-us')">
                     <span class="button-text">Связаться с нами</span>
                     <span class="arrow">→</span>
                 </div>
-                <div class="menu-button" @click="toggleMenu">Меню</div>
-                <div v-if="isMenuOpen" class="dropdown-menu">
-                    <div>О нас</div>
-                    <div>Компания</div>
-                    <div>Сервисы</div>
-                    <div>Новости</div>
-                </div>
+
             </div>
             
         </div>
     </div>
 </template>
 <script setup>
-import { ref, onMounted, defineProps } from 'vue';
+import { ref, onMounted } from 'vue';
 import Logo from '@/assets/logo.svg';
-
-const props = defineProps({
-    smoothHero: Function
-})
-
-const isMenuOpen = ref(false);
-
-function toggleMenu() {
-    isMenuOpen.value = !isMenuOpen.value;
-}
 
 const isAnimated = ref(false);
 
@@ -132,15 +116,6 @@ onMounted(() => {
 .menu-actions {
     display: flex;
     gap: 1rem;
-}
-.menu-button {
-    background-color: transparent;
-    color: #71d1b4;
-    border: 1px solid #71d1b4;
-    border-radius: 20px;
-    padding: 0.5rem 1rem;
-    cursor: pointer;
-    transition: all 0.3s ease-out;
 }
 .contact-button {
     display: inline-flex;
