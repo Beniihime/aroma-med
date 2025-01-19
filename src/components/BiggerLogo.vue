@@ -1,14 +1,12 @@
 <template>
     <section class="bigger__logo">
-        <!-- <div class="glass-effect blob1"></div> -->
-        <!-- <Logo class="bigger__logo-svg"/> -->
-        <img style="width: 80vw; height: 75vh;" src="../assets/shape1.png" alt="">
+        <img style="width: 60vw;" src="../assets/shape2.webp" alt="">
     </section>
 
 </template>
 
 <script setup>
-import Logo from '../assets/logo.svg';
+
 </script>
 
 <style scoped>

@@ -17,7 +17,6 @@
 
 <script setup>
 import { ref, onMounted } from 'vue';
-import Logo from '@/assets/logo.svg';
 
 const progress = ref(0); // Значение прогресса
 
