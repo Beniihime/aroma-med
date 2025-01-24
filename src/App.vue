@@ -67,7 +67,7 @@ onMounted(() => {
 
       <section id="hero" class="hero-section" v-if="showMainContent">
         <div class="hero-image hero-image-left" data-aos-duration="800" data-aos-delay="100" data-aos="fade-up-right">
-          <img src="https://avatars.dzeninfra.ru/get-zen_doc/271828/pub_65c193e4ea871767c4c7cc89_65c194d67ae3cc5968ca2f20/scale_1200" alt="Left happy person" />
+          <img src="@/assets/scale_1200.png" alt="Left happy person" />
         </div>
         <div class="hero-content" data-aos="fade-up">
           <h2 class="hero-subtitle">О проекте</h2>
@@ -87,7 +87,7 @@ onMounted(() => {
           <div class="product-image-container" data-aos="fade-right" data-aos-offset="0">
             <div class="leaf">
               <img
-                src="@/assets/ai.png"
+                src="@/assets/ai.webp"
                 alt="Product Image"
                 data-aos="zoom-out-right"
                 class="product-image"
@@ -137,7 +137,7 @@ onMounted(() => {
       </section> 
 
       <section id="footer" v-if="showMainContent">
-        <div data-aos="slide-up" data-aos-offset="500">
+        <div data-aos="slide-up" data-aos-offset="100">
           <Footer @scrollToSection="scrollToSection" @scrollToDetails="scrollToDetails" />
         </div>
       </section>
