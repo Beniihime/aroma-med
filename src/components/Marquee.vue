@@ -51,10 +51,12 @@
   align-items: center;
   width: fit-content;
   animation: scroll 12s linear infinite;
+  -webkit-transform-style: preserve-3d /* Фикс */
 }
 
 .tag {
   white-space: nowrap;
+  -webkit-backface-visibility: hidden; /* Фикс */
 }
 
 .separator {
@@ -63,6 +65,7 @@
   display: flex;
   align-items: center;
   white-space: nowrap;
+  -webkit-backface-visibility: hidden; /* Фикс */
 }
 
 @keyframes scroll {
@@ -71,6 +74,16 @@
   }
   100% {
     transform: translate3d(-50%, 0, 0);
+  }
+}
+
+@media (max-width: 768px) {
+  .marquee {
+    font-size: 1.25rem;
+  }
+  .separator {
+    font-size: 1rem;
+    padding: 0 2rem;
   }
 }
 </style>

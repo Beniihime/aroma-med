@@ -54,7 +54,7 @@ onMounted(() => {
     <BiggerLogo v-if="showMainContent" />
 
     <section id="top-section" v-if="showMainContent" class="position-relative">
-      <div class="helped mx-5 mb-5" style="width: 7%;">
+      <div class="helped mx-5 mb-5">
         <img class="img-fluid" src="@/assets/fsi.png" alt="ФСИ">
       </div>
       <a class="scroll-to-explore animate-scroll" @click="scrollToSection('hero')">Узнать подробнее ↓</a>
@@ -164,12 +164,12 @@ onMounted(() => {
   color: #fff;
   text-decoration: none;
   font-size: 1.2rem;
-  /* animation: bounce 0.8s infinite; */
   cursor: pointer;
 }
 
 .helped {
   animation: helped 0.3s ease-out forwards;
+  width: 10%;
 }
 
 .animate-scroll {
@@ -240,7 +240,6 @@ main {
   width: 50%;
   max-width: 400px;
   height: auto;
-
 }
 .hero-image img {
   width: 100%;
@@ -319,12 +318,12 @@ main {
 }
 
 @keyframes pulse {
-    0%, 100% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.05);
-    }
+  0%, 100% {
+      transform: scale(1);
+  }
+  50% {
+      transform: scale(1.05);
+  }
 }
 
 .product-info {
@@ -386,5 +385,76 @@ main {
   background: #5ab399;
 }
 
+@media (max-width: 1024px) {
+  .hero-section {
+    flex-direction: column;
+    text-align: center;
+    padding: 5rem 1rem;
+  }
+  .hero-image {
+    width: 100%;
+    max-width: 250px;
+  }
+  .hero-content {
+    width: 90%;
+  }
+}
+
+@media (max-width: 768px) {
+  .product-container {
+    flex-direction: column;
+    height: auto;
+    padding: 2rem 1rem;
+  }
+  .product-image-container {
+    max-width: 80%;
+  }
+  .product-title {
+    font-size: 2rem;
+  }
+  .product-subtitle {
+    font-size: 1rem;
+  }
+  .product-info {
+    max-width: 100%;
+    padding: 2rem;
+  }
+  .hero-title {
+    font-size: 2rem;
+  }
+  .hero-description {
+    font-size: 1rem;
+  }
+  .helped {
+    width: 30%;
+  }
+  .scroll-to-explore {
+    font-size: 1rem;
+    right: -40px;
+    bottom: 20px;
+  }
+  .hero-image img{
+    max-height: 150px;
+  }
+  .hero-image-right img {
+    margin-top: 30px;
+  }
+  .hero-content {
+    margin-top: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 1.75rem;
+  }
+  .hero-description {
+    font-size: 0.875rem;
+  }
+  .product-action-button {
+    width: 100%;
+    padding: 1rem;
+  }
+}
 
 </style>

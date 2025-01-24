@@ -1,11 +1,11 @@
 <template>
     <div class="preloader">
-        <div class="logo-container">
-            <!-- <Logo class="logo"/> -->
-            <video autoplay muted playsinline class="background-video">
-                <source src="../assets/preloader.mp4" type="video/mp4"/>
-            </video>
-        </div>
+        <!-- <div class="logo-container">
+            
+        </div> -->
+        <video autoplay muted playsinline class="background-video">
+            <source src="../assets/preloader.mp4" type="video/mp4"/>
+        </video>
         <div class="progress-container">
             <span 
                 class="progress__num"

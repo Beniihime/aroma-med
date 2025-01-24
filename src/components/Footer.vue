@@ -51,6 +51,7 @@ import Logo from '../assets/logo.svg';
     background: #000;
     border-radius: 32px 32px 0 0;
     color: #fff;
+    overflow-y: hidden;
 }
 
 .footer-content {
@@ -74,6 +75,14 @@ import Logo from '../assets/logo.svg';
     top: 100px;
     left: 0;
     width: 180px;
+}
+.menu-navigation {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.menu-navigation li {
+    text-align: center;
 }
 .menu-navigation div {
     cursor: pointer;
@@ -141,5 +150,73 @@ import Logo from '../assets/logo.svg';
     cursor: pointer;
     font-size: 1rem;
 }
+@media (max-width: 1024px) {
+    .footer-content {
+        flex-wrap: wrap;
+        justify-content: center;
+        text-align: center;
+        gap: 20px;
+        padding: 30px;
+    }
+
+    .footer-section {
+        flex: 1 1 100%;
+    }
+
+    .footer-links {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .logo {
+        width: 250px;
+    }
+
+    .helped {
+        position: static;
+        margin: 20px auto;
+        display: block;
+        width: 150px;
+    }
+}
+
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+    }
+
+    .footer-section {
+        text-align: center;
+    }
+
+    .footer-links {
+        align-items: center;
+        display: flex;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .back-to-top {
+        margin-top: 10px;
+    }
+
+    .logo {
+        width: 200px;
+    }
+
+    .helped {
+        width: 120px;
+    }
+    .menu-navigation {
+        align-items: center;
+    }
+}
+
 </style>
 

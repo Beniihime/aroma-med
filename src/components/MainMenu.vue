@@ -122,7 +122,7 @@ onMounted(() => {
     align-items: center;
     justify-content: center;
     position: relative;
-    padding: 0.5rem 1.5rem;
+    padding: 0.5rem 1rem;
 
     font-size: 1rem;
     font-weight: bold;
@@ -199,7 +199,7 @@ onMounted(() => {
         font-size: 0.7rem;
     }
     .menu-logo svg {
-        width: 100px;
+        width: 150px;
     }
     .main-menu {
         padding: 0.5rem;

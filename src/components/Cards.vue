@@ -96,13 +96,17 @@ main * {
 }
 main h2 {
     font-weight: bold;
-    font-size: 2.5rem;
+    font-size: 2rem;
     margin-bottom: 1em;
+}
+h3 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
 }
 main p {
     font-weight: 400;
-    line-height: 1.42;
-    font-size: 1.5rem;
+    line-height: 1.5;
+    font-size: 1.2rem;
 }
 
 @supports (animation-timeline: view()) {
@@ -197,4 +201,31 @@ main p {
     object-fit: cover;
 }
 
+@media (max-width: 768px) {
+    h3 {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+    main h2 {
+        font-size: 1.2rem;
+    }
+    main p {
+        font-size: 1rem;
+    }
+    .card {
+        /* top: 2em; */
+        padding-top: calc(var(--index) * 15px);
+    }
+    .card__content {
+        grid-template-columns: 1fr; /* ✅ Одна колонка вместо двух */
+        grid-template-areas:
+            "img"
+            "text";
+        text-align: center;
+    }
+    .card__content > div {
+        padding: 15px;
+    }
+    
+}
 </style>

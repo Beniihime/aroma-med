@@ -1,6 +1,5 @@
 <template>
     <main>
-
         <!-- Контейнер для формы и дополнительной информации -->
         <section class="contact-container">
             <!-- Форма обратной связи -->
@@ -24,6 +23,7 @@
                         @expired="onCaptchaExpired"
                         size="normal"
                         class="mb-3"
+                        style="display: flex; justify-content: center;"
                     ></vue-recaptcha>
 
                     <button type="submit" class="submit-button">Отправить</button>
@@ -96,6 +96,7 @@ const sendForm = async () => {
 /* Основные стили */
 main {
     width: 90vw;
+    max-width: 1200px;
     margin: 0 auto;
     text-align: center;
     padding: 3rem 0;
@@ -103,10 +104,6 @@ main {
 }
 
 /* Заголовок */
-.title {
-    text-align: left;
-    margin-bottom: 2rem;
-}
 h2 {
     font-weight: bold;
     font-size: 2.5rem;
@@ -121,11 +118,15 @@ h2 {
     padding: 2rem;
     border-radius: 20px;
     box-shadow: 0 0.2em 1em rgba(0, 0, 0, 0.1), 0 1em 2em rgba(0, 0, 0, 0.1);
+    flex-wrap: wrap;
+    gap: 2rem;
 }
 
 /* Форма */
 .contact-form {
-    width: 50%;
+    flex: 1;
+    min-width: 300px;
+    max-width: 500px;
     padding: 2rem;
     text-align: left;
 }
@@ -138,7 +139,6 @@ h2 {
 
 /* Поля формы */
 .input-group {
-    position: relative;
     margin: 1rem 0;
 }
 
@@ -174,7 +174,7 @@ h2 {
     color: white;
     font-size: 1.2rem;
     border: none;
-    border-radius: 8px;
+    border-radius: 12px;
     cursor: pointer;
     transition: background 0.3s ease-in-out;
 }
@@ -185,11 +185,9 @@ h2 {
 
 /* Информационные карточки */
 .info-section {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
     flex: 1;
     min-width: 250px;
+    max-width: 400px;
 }
 .info-card {
     background: #fff;
@@ -212,35 +210,34 @@ h2 {
     color: #555;
 }
 
-/* Фоновая анимация */
-/* main::before,
-main::after {
-    content: '';
-    position: absolute;
-    width: 200px;
-    height: 200px;
-    background: rgba(113, 209, 180, 0.2);
-    filter: blur(50px);
-    border-radius: 50%;
-    z-index: 1;
-}
-main::before {
-    top: -50px;
-    left: -50px;
-}
-main::after {
-    bottom: -50px;
-    right: -50px;
-} */
 
-/* Адаптивность */
 @media (max-width: 768px) {
     .contact-container {
         flex-direction: column;
+        align-items: center;
+        padding: 1.5rem;
+    }
+
+    .contact-form,
+    .info-section {
+        max-width: 100%;
+        width: 90%;
         text-align: center;
     }
-    .contact-form {
-        text-align: center;
+
+    .contact-form h3 {
+        font-size: 1.8rem;
+    }
+
+    .input-group input,
+    .input-group textarea {
+        font-size: 1rem;
+        padding: 0.7rem;
+    }
+
+    .submit-button {
+        font-size: 1rem;
+        padding: 0.8rem;
     }
 }
 </style>

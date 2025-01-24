@@ -21,6 +21,7 @@
   margin: 0 auto;
   background-color: #000;
   scroll-behavior: smooth !important;
+  /* overflow: hidden; */
 }
 
 body::-webkit-scrollbar {
@@ -64,4 +65,10 @@ body::-webkit-scrollbar-thumb {
   font-weight: normal;
   font-style: normal;
   font-display: swap;
+}
+
+@media (max-width: 768px) {
+  :root {
+    --card-height: 100vw;
+  }
 }
