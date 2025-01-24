@@ -37,11 +37,6 @@
                     <h4>Email</h4>
                     <p>AROMAMED2024@YANDEX.RU</p>
                 </div>
-                <div class="info-card">
-                    <i class="pi pi-map-marker"></i>
-                    <h4>Адрес</h4>
-                    <p>г. Омск, ул. 21-Амурская, д. 43</p>
-                </div>
             </div>
         </section>
     </main>
@@ -132,7 +127,6 @@ h2 {
 .contact-form {
     width: 50%;
     padding: 2rem;
-    /* border-radius: 10px; */
     text-align: left;
 }
 

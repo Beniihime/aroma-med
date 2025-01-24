@@ -2,8 +2,9 @@
     <div class="container-footer">
         <Marquee />
         <div class="footer-content">
-            <div class="footer-section">
+            <div class="footer-section position-relative">
                 <Logo class="logo"/>
+                <img src="../assets/fsi.png" class="helped" alt="">
             </div>
 
             <div class="footer-section">
@@ -25,12 +26,12 @@
                     <div>
                         <h4>Контакты</h4>
                         <ul class="menu-navigation">
-                            <li><div><a href="https://yandex.ru/maps/?pt=73.426243,55.045743&z=18&l=map">г. Омск, ул. 21-Амурская, д. 43</a></div></li>
                             <li><div><a href="mailto:AROMAMED2024@YANDEX.RU">AROMAMED2024@YANDEX.RU</a></div></li>
                         </ul>
                     </div>
                 </div>
             </div>
+
         </div>
         <div class="footer-bottom">
             <p>© ООО "АРОМАМЕД", 2025</p>
@@ -67,6 +68,12 @@ import Logo from '../assets/logo.svg';
     width: 300px;
     margin: 10px 0;
     fill: #71d1b4;
+}
+.helped {
+    position: absolute;
+    top: 100px;
+    left: 0;
+    width: 180px;
 }
 .menu-navigation div {
     cursor: pointer;
