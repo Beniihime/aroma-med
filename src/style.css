@@ -52,3 +52,16 @@ body::-webkit-scrollbar-thumb {
   }
   
 }
+
+@font-face {
+  font-family: "SF Pro Rounded";
+  src: url("/src/assets/font/font.eot");
+  src: url("/src/assets/font/font.eot#iefix")format("embedded-opentype"),
+      url("/src/assets/font/font.woff")format("woff"),
+      url("/src/assets/font/font.woff2")format("woff2"),
+      url("/src/assets/font/font.ttf")format("truetype"),
+      url("/src/assets/font/font.svg#SF Pro Rounded")format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
