@@ -62,7 +62,7 @@ const onCaptchaVerified = (token) => {
     captchaToken.value = token;
 };
 const onCaptchaExpired = () => {
-  captchaToken.value = "";
+    captchaToken.value = "";
 };
 
 const sendForm = async () => {

@@ -30,6 +30,10 @@
                         </ul>
                     </div>
                 </div>
+                <div class="project-help">
+                    <p class="project-help_header">Проект создан при поддержке:</p>
+                    <p class="project-help_text">Федерального государственного бюджетного учреждения "Фонд содействия развитию малых форм предприятий в научно-технической сфере" в рамках программы "Студенческий стартап" федерального проекта "Платформа университетского технологического предпринимательства"</p>
+                </div>
             </div>
 
         </div>
@@ -60,7 +64,17 @@ import Logo from '../assets/logo.svg';
     gap: 40px;
     padding: 40px;
 }
-
+.project-help {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid #71d1b4;
+    padding: .75rem;
+    border-radius: 1.125rem;
+}
+.project-help_header {
+    font-size: 1.2rem;
+    color: #71d1b4;
+}
 .footer-section {
     flex: 1;
 }
