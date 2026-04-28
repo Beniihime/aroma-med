@@ -38,7 +38,7 @@
 
         </div>
         <div class="footer-bottom">
-            <p>© ООО "АРОМАМЕД", 2025</p>
+            <p>© ООО "АРОМАМЕД", 2026</p>
             <div @click="$emit('scrollToSection', 'top-section')" class="back-to-top">Вернуться наверх ↑</div>
         </div>
     </div>

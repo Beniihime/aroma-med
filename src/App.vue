@@ -1,5 +1,6 @@
 <script setup>
 import { ref, onMounted } from 'vue';
+import putpLogo from '@/assets/putp.svg?raw';
 
 import MainMenu from './components/MainMenu.vue';
 import Preloader from './components/Preloader.vue';
@@ -55,7 +56,8 @@ onMounted(() => {
 
     <section id="top-section" v-if="showMainContent" class="position-relative">
       <div class="helped mx-5 mb-5">
-        <img class="img-fluid" src="@/assets/fsi.png" alt="ФСИ">
+        <img class="img-fluid helped-logo helped-logo-fsi" src="@/assets/fsi.png" alt="ФСИ">
+        <div class="helped-logo helped-logo-putp" aria-label="ПУТП" v-html="putpLogo"></div>
       </div>
       <a class="scroll-to-explore animate-scroll" @click="scrollToSection('hero')">Узнать подробнее ↓</a>
     </section>
@@ -169,7 +171,29 @@ onMounted(() => {
 
 .helped {
   animation: helped 0.3s ease-out forwards;
-  width: 10%;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.helped-logo {
+  display: block;
+  height: auto;
+}
+
+.helped-logo-fsi {
+  width: min(170px, 18vw);
+}
+
+.helped-logo-putp {
+  width: min(150px, 16vw);
+}
+
+.helped-logo-putp :deep(svg) {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 .animate-scroll {
@@ -228,36 +252,47 @@ main {
 }
 
 .hero-section {
-  display: flex;
+  display: grid;
+  grid-template-columns: minmax(200px, 1fr) minmax(320px, 540px) minmax(200px, 1fr);
   align-items: center;
-  justify-content: space-between;
-  padding: 7.5rem 2rem;
+  gap: clamp(1.5rem, 4vw, 4rem);
+  padding: 7.5rem clamp(1.5rem, 4vw, 4rem);
   background: #fff;
   overflow: hidden;
 }
 .hero-image {
   position: relative;
-  width: 50%;
-  max-width: 400px;
+  width: 100%;
+  max-width: 320px;
   height: auto;
+  justify-self: center;
 }
 .hero-image img {
   width: 100%;
-  height: 250px;
-  object-fit: fill;
-  clip-path: inset(2% 30px 1rem round 40px 10%);
+  height: clamp(220px, 24vw, 320px);
+  object-fit: cover;
+  border-radius: 32px;
+  box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.12);
+  clip-path: inset(0 round 32px);
 }
 
 .hero-image-left img {
-  transform: scale(1.5) translate(10%, 0);
+  transform: rotate(-6deg);
 }
 .hero-image-right img {
-  transform: scale(1.5) translate(-10%, 0);
+  transform: rotate(6deg);
 }
 
 .hero-content {
-  width: 40%;
+  width: 100%;
+  max-width: 540px;
+  margin: 0 auto;
+  padding: clamp(1.5rem, 2vw, 2.25rem);
   text-align: center;
+  position: relative;
+  z-index: 1;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.96) 0%, #fff 100%);
+  border-radius: 32px;
 }
 
 .hero-subtitle {
@@ -269,7 +304,7 @@ main {
 }
 
 .hero-title {
-  font-size: 3.5rem;
+  font-size: 3rem;
   font-weight: bold;
   color: #333;
   margin-bottom: 1.5rem;
@@ -387,13 +422,23 @@ main {
 
 @media (max-width: 1024px) {
   .hero-section {
-    flex-direction: column;
-    text-align: center;
-    padding: 5rem 1rem;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-areas:
+      "content content"
+      "left right";
+    padding: 5rem 1.5rem;
+  }
+  .hero-content {
+    grid-area: content;
+  }
+  .hero-image-left {
+    grid-area: left;
+  }
+  .hero-image-right {
+    grid-area: right;
   }
   .hero-image {
-    width: 100%;
-    max-width: 250px;
+    max-width: 260px;
   }
   .hero-content {
     width: 90%;
@@ -401,6 +446,14 @@ main {
 }
 
 @media (max-width: 768px) {
+  .hero-section {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "content"
+      "left"
+      "right";
+    gap: 1.25rem;
+  }
   .product-container {
     flex-direction: column;
     height: auto;
@@ -426,7 +479,13 @@ main {
     font-size: 1rem;
   }
   .helped {
-    width: 30%;
+    gap: 0.75rem;
+  }
+  .helped-logo-fsi {
+    width: min(130px, 26vw);
+  }
+  .helped-logo-putp {
+    width: min(110px, 24vw);
   }
   .scroll-to-explore {
     font-size: 1rem;
@@ -434,13 +493,15 @@ main {
     bottom: 20px;
   }
   .hero-image img{
-    max-height: 150px;
+    height: 220px;
   }
   .hero-image-right img {
-    margin-top: 30px;
+    margin-top: 0;
   }
   .hero-content {
-    margin-top: 30px;
+    margin-top: 0;
+    width: 100%;
+    padding: 1.5rem 1.25rem;
   }
 }
 
