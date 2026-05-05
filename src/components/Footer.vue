@@ -15,7 +15,6 @@
                             <li><div @click="$emit('scrollToSection', 'hero')">О проекте</div></li>
                             <li><div @click="$emit('scrollToDetails', 'product-section')">Наш продукт</div></li>
                             <li><div @click="$emit('scrollToDetails', 'product-details')">Преимущества</div></li>
-                            <li><div @click="$emit('scrollToSection', 'contact-us')">Связаться с нами</div></li>
                         </ul>
                     </div>
                 </div>
@@ -233,4 +232,3 @@ import Logo from '../assets/logo.svg';
 }
 
 </style>
-

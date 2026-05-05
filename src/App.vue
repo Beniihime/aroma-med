@@ -6,7 +6,6 @@ import MainMenu from './components/MainMenu.vue';
 import Preloader from './components/Preloader.vue';
 import Cards from './components/Cards.vue';
 import BiggerLogo from './components/BiggerLogo.vue';
-import ContactUs from './components/ContactUs.vue';
 import Marquee from './components/Marquee.vue';
 import Footer from './components/Footer.vue';
 
@@ -133,10 +132,6 @@ onMounted(() => {
           <Cards />
         </div>
       </section>
-
-      <section id="contact-us" v-if="showMainContent">
-        <ContactUs />
-      </section> 
 
       <section id="footer" v-if="showMainContent">
         <div data-aos="slide-up" data-aos-offset="100">
